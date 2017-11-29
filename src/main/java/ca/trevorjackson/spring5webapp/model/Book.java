@@ -1,13 +1,24 @@
 package ca.trevorjackson.spring5webapp.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by Trevor Jackson
+ * November 28, 2017
+ **/
+@Entity
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String title;
     private String isbn;
     private String publisher;
 
+    @ManyToMany
     private Set<Author> authors = new HashSet<>();
 
     public Book() {
