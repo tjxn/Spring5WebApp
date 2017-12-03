@@ -40,6 +40,10 @@ public class Book {
         this.authors = authors;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
